@@ -235,16 +235,9 @@ export default function Page() {
         </ScrollSection>
         <ScrollSection>
           <li>
-            <Link href='https://github.com/sia-tyra'>
-              Work github
-            </Link>
-          </li>
-        </ScrollSection>
-        <ScrollSection>
-          <li>
-            <Link href='https://github.com/siatyra'>
-              Personal github
-            </Link>
+            <Link href='https://github.com/tyraanosaurus'>
+              Github
+            </Link>/
           </li>
         </ScrollSection>
       </ul>
@@ -254,27 +247,27 @@ export default function Page() {
   
   return (
       <div className='flex flex-col justify-start gap-8'>
-          <ScrollSection className=''>
+          <ScrollSection>
             {intro}
           </ScrollSection>
 
-          <ScrollSection className=''>
+          <ScrollSection>
             {summary}
           </ScrollSection>
 
-          <ScrollSection className=''>
+          <ScrollSection>
             {skills}
           </ScrollSection>
 
-          <ScrollSection className=''>
+          <ScrollSection>
             {links}
           </ScrollSection>
 
-          <ScrollSection className=''>
+          <ScrollSection>
             {contact}
           </ScrollSection>
 
-          <ScrollSection className=''>
+          <ScrollSection>
             <Sparkles />
           </ScrollSection>
       </div>
