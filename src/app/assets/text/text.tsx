@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion } from "framer-motion";
 
-type TextProps = {
+export type TextProps = {
   children?: string;
   type?: string;
   size?: string;

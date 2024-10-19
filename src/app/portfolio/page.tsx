@@ -17,51 +17,74 @@ export default function Page() {
 
         <ScrollSection>
           <Wrapper border="bottom">
-            <Text>
-              This should be bulked out a little more as the year goes on! For
-              now you might enjoy my first project - an app I made as part of
-              the Black CodHer software development bootcamp.
-            </Text>
-
-            <Text>
-              It is a simple app that pulls Doja Cats tweets from Twitter and
-              displays them in a fun way. It is no longer deployed but I have
-              the relevant links below. Enjoy!
-            </Text>
+            <ScrollSection>
+              <Text>
+                This should be bulked out a little more as the year goes on! For
+                now you might enjoy my first project - an app I made as part of
+                the Black CodHer software development bootcamp.
+              </Text>
+            </ScrollSection>
+            <ScrollSection>
+              <Text>
+                This should be bulked out a little more as the year goes on! For
+                now you might enjoy my first project - an app I made as part of
+                the Black CodHer software development bootcamp.
+              </Text>
+            </ScrollSection>
+            <ScrollSection>
+              <Text>
+                It is a simple app that pulls Doja Cats tweets from Twitter and
+                displays them in a fun way. It is no longer deployed but I have
+                the relevant links below. Enjoy!
+              </Text>
+            </ScrollSection>
             <Wrapper spacer="large">
-              <Link
-                className={className}
-                href="https://drive.google.com/file/d/1SCj0nwYoizSITEb_ySIsSIrsgOgWHIZP/view?usp=drive_link"
-              >
-                Demo
-              </Link>
-              <Link
-                className={className}
-                href="https://docs.google.com/presentation/d/1TuwJQwfF6XZPkMFdTnSa9KElk4M70P4KV6Q_7LMmiRA"
-              >
-                Presentation
-              </Link>
-              <Link
-                className={className}
-                href="https://github.com/black-codher-bootcamp-2021-jackson/personal-project-siatyra"
-              >
-                Project on Github
-              </Link>
+              <ScrollSection>
+                <Link
+                  className={className}
+                  href="https://drive.google.com/file/d/1SCj0nwYoizSITEb_ySIsSIrsgOgWHIZP/view?usp=drive_link"
+                >
+                  Demo
+                </Link>
+              </ScrollSection>
+              <ScrollSection>
+                <Link
+                  className={className}
+                  href="https://docs.google.com/presentation/d/1TuwJQwfF6XZPkMFdTnSa9KElk4M70P4KV6Q_7LMmiRA"
+                >
+                  Presentation
+                </Link>
+              </ScrollSection>
+              <ScrollSection>
+                <Link
+                  className={className}
+                  href="https://github.com/black-codher-bootcamp-2021-jackson/personal-project-siatyra"
+                >
+                  Project on Github
+                </Link>
+              </ScrollSection>
             </Wrapper>
           </Wrapper>
         </ScrollSection>
         <ScrollSection>
           <Wrapper>
-            <H2>Works in progress</H2>
-            <Text>
-              I have ADHD and don't really like any of the organisation boards I
-              found out there currently so I'm in the process of creating my
-              own.
-            </Text>
-            <Text>
-              It is currently in the relatively early stages but I hope for it
-              to be able to do the following:
-            </Text>
+            <ScrollSection>
+              <H2>Works in progress</H2>
+            </ScrollSection>
+            <ScrollSection>
+              <Text>
+                I have ADHD and don't really like any of the organisation boards
+                I found out there currently so I'm in the process of creating my
+                own.
+              </Text>
+            </ScrollSection>
+            <ScrollSection>
+              <Text>
+                It is currently in the relatively early stages but I hope for it
+                to be able to do the following:
+              </Text>
+            </ScrollSection>
+
             <Wrapper>
               <ScrollSection>
                 <Text size="md">1. Look super cute!</Text>
@@ -106,13 +129,14 @@ export default function Page() {
                   below.
                 </Text>
               </ScrollSection>
-
-              <Link
-                className={className}
-                href="https://github.com/tyraanosaurus/todos"
-              >
-                Demo
-              </Link>
+              <ScrollSection>
+                <Link
+                  className={className}
+                  href="https://github.com/tyraanosaurus/todos"
+                >
+                  Project on Github
+                </Link>
+              </ScrollSection>
             </Wrapper>
           </Wrapper>
         </ScrollSection>
