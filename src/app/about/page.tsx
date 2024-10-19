@@ -25,15 +25,13 @@ export default function Page() {
 
   const intro = (
     <div className={className}>
-
       <ScrollSection>
         <Wrapper>
-          <Wrapper direction='row'>
-            <HeaderSparkles text="Hi there! It's me, Tyra." isMobile={isMobile} />
-
-
-
-
+          <Wrapper direction="row">
+            <HeaderSparkles
+              text="Hi there! It's me, Tyra."
+              isMobile={isMobile}
+            />
           </Wrapper>
 
           <H2>

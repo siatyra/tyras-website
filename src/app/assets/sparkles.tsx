@@ -6,7 +6,7 @@ export const Sparkles = (): JSX.Element => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); 
+      setIsMobile(window.innerWidth < 768);
     };
 
     handleResize();

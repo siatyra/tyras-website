@@ -9,4 +9,4 @@ export const handleIsMobile = (setIsMobile: (isMobile: boolean) => void) => {
   return () => {
     window.removeEventListener("resize", handleResize);
   };
-}
+};

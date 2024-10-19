@@ -14,19 +14,16 @@ import { H1 } from "../assets/text/h1";
 
 export default function Page() {
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
     handleIsMobile(setIsMobile);
   }, []);
-
 
   const className = "hover:text-[#4EB17A] cursor-crosshair italic";
   return (
     <div className="flex flex-col justify-start gap-5">
       <div className="flex flex-col justify-start gap-5">
-        <H1>
-          Portfolio
-        </H1>
+        <H1>Portfolio</H1>
         <HeaderSparkles text="My work so far" isMobile={isMobile} />
 
         <ScrollSection>
