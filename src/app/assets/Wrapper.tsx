@@ -37,6 +37,9 @@ export const wrapperCva = cva(["flex"], {
       width: "w-full",
       height: "h-full",
     },
+    border: {
+      bottom: "border-b",
+    },
   },
   defaultVariants: {
     direction: "column",
@@ -52,6 +55,7 @@ export const Wrapper = ({
   gap,
   spacer,
   fill,
+  border,
 }: WrapperProps) => {
   return (
     <div
@@ -62,6 +66,7 @@ export const Wrapper = ({
         gap,
         spacer,
         fill,
+        border,
       })}
     >
       {children}
