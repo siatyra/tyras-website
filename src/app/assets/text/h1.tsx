@@ -1,11 +1,9 @@
-import { TextProps } from "../../interfaces"
-import { motion } from 'framer-motion';
+import { TextProps } from "../../interfaces";
+import { motion } from "framer-motion";
 
-export const H1 = ({
-  children,
-  }: TextProps ): JSX.Element => { 
-  const className = 'font-Lora bold text-7xl'
-  const text = children?.split(' ')
+export const H1 = ({ children }: TextProps): JSX.Element => {
+  const className = "font-Lora bold text-7xl";
+  const text = children?.split(" ");
 
   return (
     <h1 className={className}>
@@ -15,13 +13,13 @@ export const H1 = ({
           animate={{ opacity: 1 }}
           transition={{
             duration: 8,
-            delay: i / 10
+            delay: i / 10,
           }}
           key={i}
         >
           {el}{" "}
-      </motion.span>
+        </motion.span>
       ))}
     </h1>
-  )
-}
+  );
+};

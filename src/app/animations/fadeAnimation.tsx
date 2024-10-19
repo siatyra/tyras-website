@@ -1,28 +1,28 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
-import { TransitionProps } from '../interfaces'
+import { TransitionProps } from "../interfaces";
 
 export const FadeIn = ({
   children,
   delay = 0,
-  duration = 5
+  duration = 5,
 }: TransitionProps) => {
   return (
     <motion.div
-      initial={{ 
-        opacity: 0 
+      initial={{
+        opacity: 0,
       }}
-      animate={{ 
-        opacity: 1
+      animate={{
+        opacity: 1,
       }}
       transition={{
         duration: duration,
-        delay: delay
+        delay: delay,
       }}
     >
       {children}
     </motion.div>
-  )
-}
+  );
+};

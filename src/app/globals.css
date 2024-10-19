@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  --foreground-rgb: 	245	236	241;
-  --background-start-rgb: 177	78	133;
-  --background-end-rgb: 	159	70	119;
+  --foreground-rgb: 245 236 241;
+  --background-start-rgb: 177 78 133;
+  --background-end-rgb: 159 70 119;
 }
 
 @media (prefers-color-scheme: dark) {
