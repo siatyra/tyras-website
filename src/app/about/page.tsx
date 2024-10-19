@@ -11,73 +11,31 @@ import { SpinningDiamond } from "../animations/spinningDiamond";
 import { Sparkles } from "../assets/sparkles";
 import { Wrapper } from "../assets/Wrapper";
 import { useEffect, useState } from "react";
+import { HeaderSparkles } from "../assets/text/HeaderSparkles";
+import Head from "next/head";
+import { handleIsMobile } from "../assets/util";
 
 export default function Page() {
   const [isMobile, setIsMobile] = useState(false);
   const className = "flex flex-col border-b gap-8 pb-8";
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    handleIsMobile(setIsMobile);
   }, []);
 
   const intro = (
     <div className={className}>
-      <div className="flex items-center justify-start">
-        <FadeIn>
-          <Wrapper align="center" justify="center">
-            <div className={isMobile ? "" : "mb-5"}>
-              <Wrapper>
-                <FadeIn>
-                  <H1>All about me!</H1>
-                </FadeIn>
-                {!isMobile && (
-                  <FadeIn>
-                    <Image
-                      src="/tyra.jpg"
-                      alt="Tyra"
-                      width={200}
-                      height={200}
-                      style={{
-                        borderRadius: "20px",
-                        border: "4px double #ffffff",
-                        padding: "10px",
-                        display: "flex",
-                        justifyContent: "flex-end",
-                        marginRight: `${isMobile ? "" : "50px"}`,
-                      }}
-                    />
-                  </FadeIn>
-                )}
-              </Wrapper>
-            </div>
-          </Wrapper>
-        </FadeIn>
-      </div>
-
-      {!isMobile && (
-        <div className="flex flex-wrap justify-center mt-5 md:mt-0">
-          <SpinningDiamond size="120px" rotate={-360} />
-          <SpinningDiamond size="50px" rotate={360} />
-          <SpinningDiamond size="100px" rotate={360} />
-          <SpinningDiamond size="30px" rotate={-360} />
-          <SpinningDiamond size="80px" rotate={-360} />
-          <SpinningDiamond size="30px" rotate={360} />
-          <SpinningDiamond size="15px" rotate={-360} />
-        </div>
-      )}
 
       <ScrollSection>
         <Wrapper>
-          <H2>Hi there! It's me, Tyra.</H2>
+          <Wrapper direction='row'>
+            <HeaderSparkles text="Hi there! It's me, Tyra." isMobile={isMobile} />
+
+
+
+
+          </Wrapper>
+
           <H2>
             I'm a Frontend Software engineer with big dreams and a bigger heart,
             working in an even bigger city (London).
@@ -97,7 +55,7 @@ export default function Page() {
   const summary = (
     <div className={className}>
       <ScrollSection>
-        <H2>Summary</H2>
+        <HeaderSparkles text="Summary" isMobile={isMobile} />
       </ScrollSection>
 
       <ScrollSection>
@@ -141,7 +99,7 @@ export default function Page() {
   const skills = (
     <div className={className}>
       <ScrollSection>
-        <H2>Skills</H2>
+        <HeaderSparkles text="Skills" isMobile={isMobile} />
       </ScrollSection>
 
       <ScrollSection>
@@ -199,7 +157,7 @@ export default function Page() {
   const links = (
     <div className={className}>
       <ScrollSection>
-        <H2>Links</H2>
+        <HeaderSparkles text="Links" isMobile={isMobile} />
       </ScrollSection>
 
       <ScrollSection>
@@ -219,7 +177,7 @@ export default function Page() {
     <div className={className}>
       <ul className="text-lg">
         <ScrollSection className="pb-8">
-          <H2>Contact</H2>
+          <HeaderSparkles text="Contact" isMobile={isMobile} />
         </ScrollSection>
 
         <ScrollSection>

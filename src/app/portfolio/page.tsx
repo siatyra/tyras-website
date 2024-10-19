@@ -7,23 +7,30 @@ import Link from "next/link";
 import { Sparkles } from "../assets/sparkles";
 import { ScrollSection } from "../animations/scrollSections";
 import { Wrapper } from "../assets/Wrapper";
+import { HeaderSparkles } from "../assets/text/HeaderSparkles";
+import { useEffect, useState } from "react";
+import { handleIsMobile } from "../assets/util";
+import { H1 } from "../assets/text/h1";
 
 export default function Page() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    handleIsMobile(setIsMobile);
+  }, []);
+
+
   const className = "hover:text-[#4EB17A] cursor-crosshair italic";
   return (
     <div className="flex flex-col justify-start gap-5">
       <div className="flex flex-col justify-start gap-5">
-        <H2>My work so far</H2>
+        <H1>
+          Portfolio
+        </H1>
+        <HeaderSparkles text="My work so far" isMobile={isMobile} />
 
         <ScrollSection>
           <Wrapper border="bottom">
-            <ScrollSection>
-              <Text>
-                This should be bulked out a little more as the year goes on! For
-                now you might enjoy my first project - an app I made as part of
-                the Black CodHer software development bootcamp.
-              </Text>
-            </ScrollSection>
             <ScrollSection>
               <Text>
                 This should be bulked out a little more as the year goes on! For
@@ -69,7 +76,7 @@ export default function Page() {
         <ScrollSection>
           <Wrapper>
             <ScrollSection>
-              <H2>Works in progress</H2>
+              <HeaderSparkles text="Works in progress" isMobile={isMobile} />
             </ScrollSection>
             <ScrollSection>
               <Text>
