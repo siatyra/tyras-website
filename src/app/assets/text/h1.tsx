@@ -2,7 +2,7 @@ import { TextProps } from "../../interfaces";
 import { motion } from "framer-motion";
 
 export const H1 = ({ children }: TextProps): JSX.Element => {
-  const className = "font-Lora bold text-7xl";
+  const className = "font-Lora font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl";
   const text = children?.split(" ");
 
   return (

@@ -22,7 +22,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.gif" type="image/gif" />
       </Head>
       <body className={inter.className}>
-        <div className="flex min-h-screen flex-col pl-52 pr-52 pt-20 pb-20 font-Lora">
+        <div className="flex min-h-screen flex-col px-4 py-10 md:px-20 lg:px-52 font-Lora">
           <Navbar />
           {children}
         </div>
