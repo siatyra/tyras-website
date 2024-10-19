@@ -26,9 +26,6 @@ export default function RootLayout({
           <Navbar />
           {children}
         </div>
-        <div className="fixed bottom-[10px] right-[10px] text-[8px]">
-          Sparkle SVG created by Daisy from the Noun Project
-        </div>
       </body>
     </html>
   );
