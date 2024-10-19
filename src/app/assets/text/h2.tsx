@@ -1,5 +1,5 @@
-import { TextProps } from "../../interfaces";
 import { motion } from "framer-motion";
+import { TextProps } from "./text";
 
 export const H2 = ({ children }: TextProps): JSX.Element => {
   const className = "font-Lora bold text-3xl";
