@@ -9,37 +9,62 @@ import Link from "next/link";
 import { ScrollSection } from "../animations/scrollSections";
 import { SpinningDiamond } from "../animations/spinningDiamond";
 import { Sparkles } from "../assets/sparkles";
+import { Wrapper } from "../assets/Wrapper";
+import { useEffect, useState } from "react";
 
 export default function Page() {
+  const [isMobile, setIsMobile] = useState(false);
   const className = "flex flex-col border-b gap-8 pb-8";
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const intro = (
     <div className={className}>
-      <div className="flex flex-row justify-between items-center">
+      <div className="flex items-center justify-start">
         <FadeIn>
-          <div className="mb-5">
-            <Image
-              src="/tyra.jpg"
-              alt="Tyra"
-              width={200}
-              height={200}
-              style={{
-                borderRadius: "30px",
-                border: "4px double #ffffff",
-                padding: "2px",
-                display: "flex",
-                justifyContent: "flex-end",
-                marginRight: "50px",
-              }}
-            />
-          </div>
+          <Wrapper align="center" justify="center">
+            <div className={isMobile ? "" : "mb-5"}>
+              <Wrapper>
+                <FadeIn>
+                  <H1>All about me!</H1>
+                </FadeIn>
+                {!isMobile && (
+                  <FadeIn>
+                    <Image
+                      src="/tyra.jpg"
+                      alt="Tyra"
+                      width={200}
+                      height={200}
+                      style={{
+                        borderRadius: "20px",
+                        border: "4px double #ffffff",
+                        padding: "10px",
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        marginRight: `${isMobile ? "" : "50px"}`,
+                      }}
+                    />
+                  </FadeIn>
+                )}
+              </Wrapper>
+            </div>
+          </Wrapper>
         </FadeIn>
+      </div>
 
-        <FadeIn>
-          <H1>All about Tyra!</H1>
-        </FadeIn>
-
-        <div className="flex">
+      {!isMobile && (
+        <div className="flex flex-wrap justify-center mt-5 md:mt-0">
           <SpinningDiamond size="120px" rotate={-360} />
           <SpinningDiamond size="50px" rotate={360} />
           <SpinningDiamond size="100px" rotate={360} />
@@ -48,25 +73,22 @@ export default function Page() {
           <SpinningDiamond size="30px" rotate={360} />
           <SpinningDiamond size="15px" rotate={-360} />
         </div>
-      </div>
+      )}
 
       <ScrollSection>
-        <H2>
-          I&apos;m a Junior Front-end Software Engineer currently working in a
-          very expensive flat in London, England (please help).
-        </H2>
+        <Wrapper>
+          <H2>Hi there! It's me, Tyra.</H2>
+          <H2>
+            I'm a Frontend Software engineer with big dreams and a bigger heart,
+            working in an even bigger city (London).
+          </H2>
+        </Wrapper>
       </ScrollSection>
       <ScrollSection>
         <H2>
           My hobbies include thinking diligently and gloriously of the joys of
           Tajin with lime Clasíco seasoning™ and occasionally rollerskating to
           the dulcet tones of Kaytranada.
-        </H2>
-      </ScrollSection>
-      <ScrollSection>
-        <H2>
-          My life seems to be a slow journey of mediocre choices and, according
-          to my Monzo wrapped, a plethora of McDonalds orders.
         </H2>
       </ScrollSection>
     </div>
@@ -80,10 +102,10 @@ export default function Page() {
 
       <ScrollSection>
         <Text>
-          In my short 26 years I&apos;ve worn a lot of hats but I&apos;m happy
+          In my short 27 years I&apos;ve worn a lot of hats but I&apos;m happy
           to say I&apos;ve always remained a creative. I&apos;ve spent my time
-          as a software engineer, a customer success representative, supermarket
-          assistant and pizza artist.
+          as a software engineer, a customer success representative, a
+          supermarket assistant and even a pizza artist.
         </Text>
       </ScrollSection>
 
@@ -98,20 +120,19 @@ export default function Page() {
 
       <ScrollSection>
         <Text>
-          As for my education, I very erronously studied English at the
-          University of Sheffield and graduated with a first. That being said, I
-          realised that studying humanities was a huge flop and needed to get a
-          career that would actually make me money, or, indeed, have the funding
-          to be able to hire me at all.
+          As for my education, I studied English at the University of Sheffield
+          and graduated with a first before covid hit and really made me
+          reconsider all my life choices. Post-realisation I decided to take a
+          leap of faith and dive headfirst into the world of tech, a world I had
+          always been interested in but had never had the encouragement to
+          explore.
         </Text>
       </ScrollSection>
 
       <ScrollSection>
         <Text>
-          So now here I am, a tumblr goblin turned framer motion extraordinaire
-          just dying to dazzle you with mediocre animations and a penchant for
-          the colour green. I hope it didn&apos;t make you too sick to your
-          stomach.
+          So now here I am, a wannabe react extraordinaire now trying to learn
+          all! of the things about software engineering.
         </Text>
       </ScrollSection>
     </div>
@@ -185,7 +206,7 @@ export default function Page() {
         <FadeIn>
           <Link
             href="https://blackcodher.com/"
-            className="mr-[3px] text-xl hover:text-[#4EB17A] cursor-crosshair"
+            className="mr-[3px] text-xl hover:text-[#4EB17A] cursor-crosshair italic"
           >
             Black CodHer full-stack software development bootcamp
           </Link>
@@ -206,13 +227,18 @@ export default function Page() {
         </ScrollSection>
 
         <ScrollSection>
-          <li>
+          <li className="italic">
             <Link href="linkedin.com/siatyraanglin">LinkedIn</Link>
           </li>
         </ScrollSection>
         <ScrollSection>
-          <li>
-            <Link href="https://github.com/tyraanosaurus">Github</Link>/
+          <li className="italic">
+            <Link href="https://github.com/tyraanosaurus">Github</Link>
+          </li>
+        </ScrollSection>
+        <ScrollSection>
+          <li className="italic">
+            <Link href="https://github.com/siatyra">Old Github</Link>
           </li>
         </ScrollSection>
       </ul>

@@ -1,5 +1,5 @@
-import Icon from '@mdi/react';
-import { mdiStarFourPoints } from '@mdi/js';
+import Icon from "@mdi/react";
+import { mdiStarFourPoints } from "@mdi/js";
 import { motion } from "framer-motion";
 import { SpinningDiamondProps } from "../interfaces";
 
@@ -27,7 +27,7 @@ export const SpinningDiamond: React.FC<SpinningDiamondProps> = ({
         repeatDelay: 0,
       }}
     >
-    <Icon path={mdiStarFourPoints} size="100%" color="#FFFFFF" />
+      <Icon path={mdiStarFourPoints} size="100%" color="#FFFFFF" />
     </motion.svg>
   );
 };

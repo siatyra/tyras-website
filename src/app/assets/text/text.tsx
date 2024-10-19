@@ -1,12 +1,35 @@
-import { TextProps } from "../../interfaces";
+import { cva, type VariantProps } from "class-variance-authority";
 import { motion } from "framer-motion";
 
-export const Text = ({ children }: TextProps): JSX.Element => {
-  const className = "font-Lora bold text-xl";
+type TextProps = {
+  children?: string;
+  type?: string;
+  size?: string;
+} & VariantProps<typeof textCva>;
+
+export const textCva = cva(["font-Lora bold"], {
+  variants: {
+    size: {
+      sm: "text-sm",
+      md: "text-md",
+      lg: "text-lg",
+      xl: "text-xl",
+    },
+  },
+  defaultVariants: {
+    size: "xl",
+  },
+});
+
+export const Text = ({ children, size }: TextProps): JSX.Element => {
   const text = children?.split(" ");
 
   return (
-    <p className={className}>
+    <p
+      className={textCva({
+        size,
+      })}
+    >
       {text?.map((el, i) => (
         <motion.span
           initial={{ opacity: 0 }}

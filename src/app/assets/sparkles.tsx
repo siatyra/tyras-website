@@ -27,29 +27,27 @@ export const Sparkles = (): JSX.Element => {
         </div>
       </div>
 
-
-        <div className="w-full md:w-[250px] h-[0px] flex flex-col items-start space-y-4 md:space-y-2">
-          <div className="flex justify-end items-end">
-            <SpinningDiamond size="30px" rotate={-360} />
-          </div>
-          <SpinningDiamond size="200px" rotate={-360} />
+      <div className="w-full md:w-[250px] h-[0px] flex flex-col items-start space-y-4 md:space-y-2">
+        <div className="flex justify-end items-end">
           <SpinningDiamond size="30px" rotate={-360} />
         </div>
-
+        <SpinningDiamond size="200px" rotate={-360} />
+        <SpinningDiamond size="30px" rotate={-360} />
+      </div>
 
       {!isMobile && (
         <>
-        <div className="flex justify-end items-center p-4 md:p-8">
-          <SpinningDiamond size="150px" rotate={360} />
-          {!isMobile && <SpinningDiamond size="30px" rotate={-360} />}
-        </div>
+          <div className="flex justify-end items-center p-4 md:p-8">
+            <SpinningDiamond size="150px" rotate={360} />
+            {!isMobile && <SpinningDiamond size="30px" rotate={-360} />}
+          </div>
 
-        <div className="flex justify-around items-center p-4 md:p-8">
-          <SpinningDiamond size="150px" rotate={360} />
-          {!isMobile && <SpinningDiamond size="50px" rotate={-360} />}
-        </div>
+          <div className="flex justify-around items-center p-4 md:p-8">
+            <SpinningDiamond size="150px" rotate={360} />
+            {!isMobile && <SpinningDiamond size="50px" rotate={-360} />}
+          </div>
         </>
-        )}
+      )}
     </>
   );
 };

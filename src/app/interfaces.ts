@@ -1,8 +1,3 @@
-export interface TextProps {
-  children?: string;
-  type?: string;
-}
-
 export interface TransitionProps {
   delay?: number;
   duration?: number;
