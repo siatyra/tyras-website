@@ -14,7 +14,7 @@ export const Navbar = (): React.ReactElement => {
     <motion.div
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
-      className={`${className} border-b flex flex-col md:flex-row gap-2 md:gap-5 justify-start items-start mb-5 md:mb-10 pb-2 md:pb-4 ${
+      className={`${className} border-b flex md:flex-row gap-2 md:gap-5 justify-start items-start mb-5 md:mb-10 pb-2 md:pb-4 ${
         isOpen && "text-[#fce803]"
       }`}
       initial={{ opacity: 0 }}
@@ -27,7 +27,7 @@ export const Navbar = (): React.ReactElement => {
       <div className="cursor-not-allowed text-lg sm:text-xl md:text-2xl">Menu</div>
       <AnimatePresence>
         {isOpen && (
-          <div className="flex flex-col gap-2 md:flex-row md:gap-5">
+          <div className="flex gap-2 md:flex-row md:gap-5">
             <NavLink>
               <Link href="/" className={className}>
                 Home
